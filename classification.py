@@ -1,24 +1,28 @@
-import matplotlib.pyplot as plt
-import os
-from tqdm.notebook import tqdm
-import pandas as pd
-import skimage
-import random
-import numpy as np
-from sklearn.model_selection import train_test_split
-from matplotlib.pyplot import figure
-from sklearn.metrics import *
-from skimage import transform
-from sklearn.model_selection import GroupShuffleSplit
-from torch.utils.data import DataLoader
-from torch.utils.data import Dataset, TensorDataset
-from sklearn.model_selection import train_test_split
-from torchvision import transforms
 import torch
 import torch.nn.functional as F
 import torch.nn as nn
 import torch.optim as optim
+from torchvision import transforms
+from torch.utils.data import DataLoader
+from torch.utils.data import Dataset, TensorDataset
 
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from matplotlib.pyplot import figure
+import seaborn as sns
+import skimage
+from skimage import transform
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import OneHotEncoder
+from sklearn.metrics import *
+from sklearn.model_selection import GroupShuffleSplit, train_test_split
+from sklearn.metrics import confusion_matrix
+import xgboost as xgb 
+
+from tqdm.notebook import tqdm
+import os
+import random
 
 class CNNCLF(nn.Module):
     def __init__(self, n_classes):
